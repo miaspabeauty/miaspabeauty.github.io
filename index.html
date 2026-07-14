@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mia Spa - Wellness Experience / Experiencia de Bienestar</title>
+    <title>Mia Spa - Wellness & Automation Experience</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,6 +14,7 @@
                         spaPink: '#F9ECEE',
                         spaDarkPink: '#DCA9B0',
                         spaText: '#4A3538',
+                        spaGold: '#D4AF37',
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'Georgia', 'serif'],
@@ -23,68 +24,90 @@
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             color: #4A3538;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar for beautiful presentation */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9ECEE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DCA9B0;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-white min-h-screen flex flex-col justify-between">
+<body class="bg-[#faf6f6] min-h-screen flex flex-col justify-between">
 
     <!-- Header / Cabecera -->
-    <header class="w-full max-w-4xl mx-auto px-6 py-5 flex justify-between items-center bg-white">
+    <header class="w-full max-w-5xl mx-auto px-6 py-5 flex justify-between items-center bg-transparent border-b border-spaPink">
+        <!-- Logo -->
         <div class="text-2xl md:text-3xl font-light tracking-wide">
             <span class="font-serif italic text-spaDarkPink">Mia</span> Spa
         </div>
-        <div class="bg-spaPink text-spaDarkPink text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
-            Raleigh, NC
+        
+        <!-- Socials & Location -->
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 text-spaDarkPink">
+                <a href="https://www.instagram.com/spa.miabeauty/" target="_blank" class="hover:text-spaText transition duration-200" title="Instagram">
+                    <i class="fa-brands fa-instagram text-lg md:text-xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@miaspa17" target="_blank" class="hover:text-spaText transition duration-200" title="TikTok">
+                    <i class="fa-brands fa-tiktok text-md md:text-lg"></i>
+                </a>
+            </div>
+            <div class="bg-spaPink text-spaDarkPink text-[10px] md:text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
+                Raleigh, NC
+            </div>
         </div>
     </header>
 
-    <!-- Main Content / Contenido Principal -->
-    <main class="w-full max-w-2xl mx-auto px-6 py-8 flex-grow">
+    <!-- Main Wrapper -->
+    <main class="w-full max-w-5xl mx-auto px-4 md:px-6 py-8 flex-grow space-y-12">
         
-        <!-- Star Service Badge / Distintivo -->
-        <div class="text-center mb-4">
-            <span class="text-spaDarkPink text-xs font-semibold tracking-widest uppercase">
-                Signature Service • Servicio Estrella
-            </span>
-        </div>
+        <!-- INTRO & SIGNATURE RITUAL -->
+        <section class="max-w-3xl mx-auto text-center space-y-6">
+            <div class="text-center">
+                <span class="text-spaDarkPink text-xs font-semibold tracking-widest uppercase bg-spaPink px-4 py-1.5 rounded-full">
+                    Signature Experience • Experiencia Estrella
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl text-spaText font-serif mb-2 leading-tight">
+                Our Signature Ritual
+            </h1>
+            <h2 class="text-xl md:text-2xl text-spaDarkPink font-serif italic">
+                Nuestro Ritual Signature
+            </h2>
+            <div class="text-gray-600 space-y-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                <p>
+                    An immersive experience designed to restore your inner peace, release accumulated tension, and bring natural balance back to your body.
+                </p>
+                <p class="italic text-spaDarkPink text-xs md:text-sm border-t border-spaPink pt-3">
+                    Una experiencia inmersiva diseñada para restaurar tu paz interior, liberar tensiones acumuladas y devolverle el equilibrio natural a tu cuerpo.
+                </p>
+            </div>
+        </section>
 
-        <!-- Main Title / Título -->
-        <h1 class="text-3xl md:text-5xl text-center text-spaText font-serif mb-3 leading-tight">
-            Our Signature Ritual
-        </h1>
-        <h2 class="text-xl md:text-2xl text-center text-spaDarkPink font-serif italic mb-6">
-            Nuestro Ritual Signature
-        </h2>
-
-        <!-- Description / Descripción -->
-        <div class="text-center text-gray-600 space-y-3 max-w-lg mx-auto mb-10 text-sm md:text-base leading-relaxed">
-            <p>
-                An immersive experience designed to restore your inner peace, release accumulated tension, and bring natural balance back to your body.
-            </p>
-            <p class="italic text-spaDarkPink text-xs md:text-sm border-t border-spaPink pt-3">
-                Una experiencia inmersiva diseñada para restaurar tu paz interior, liberar tensiones acumuladas y devolverle el equilibrio natural a tu cuerpo.
-            </p>
-        </div>
-
-        <!-- Card / Tarjeta del Servicio -->
-        <div class="bg-spaPink/40 rounded-3xl p-6 md:p-8 border border-spaPink mb-8 shadow-sm">
-            
+        <!-- SPECIAL MASSAGE CARD -->
+        <section class="max-w-3xl mx-auto bg-white rounded-3xl p-6 md:p-8 border border-spaPink shadow-sm">
             <div class="flex justify-between items-start mb-6">
                 <div>
-                    <h3 class="text-2xl text-spaText font-serif">Special Massage</h3>
+                    <h3 class="text-2xl md:text-3xl text-spaText font-serif">Special Massage</h3>
                     <h4 class="text-lg text-spaDarkPink font-serif italic">Masaje Especial Mia Spa</h4>
                 </div>
-                <div class="bg-white px-3 py-1.5 rounded-full border border-spaPink text-center">
-                    <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-spaDarkPink block">
+                <div class="bg-spaPink px-3 py-1.5 rounded-2xl border border-spaPink text-center">
+                    <span class="text-[9px] font-semibold uppercase tracking-widest text-spaDarkPink block">
                         Duration / Duración
                     </span>
                     <span class="text-xs md:text-sm font-semibold text-spaText block">
@@ -93,7 +116,6 @@
                 </div>
             </div>
 
-            <!-- Intro / Introducción -->
             <p class="text-gray-600 text-sm mb-6 pb-4 border-b border-spaPink/60">
                 Perfectly combines four ancestral techniques in a single session:
                 <span class="block italic text-spaDarkPink text-xs mt-1">
@@ -101,9 +123,7 @@
                 </span>
             </p>
 
-            <!-- Techniques / Técnicas -->
-            <ul class="space-y-5 text-sm">
-                <!-- 1. Anti-stress -->
+            <ul class="space-y-5 text-sm mb-8">
                 <li class="flex items-start">
                     <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
@@ -113,8 +133,6 @@
                         </span>
                     </div>
                 </li>
-
-                <!-- 2. Volcanic Stones -->
                 <li class="flex items-start">
                     <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
@@ -124,12 +142,10 @@
                         </span>
                     </div>
                 </li>
-
-                <!-- 3. Lavender Aromatherapy -->
                 <li class="flex items-start">
                     <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
-                        <strong class="text-spaText">Lavender Aromatherapy:</strong> The use of pure organic essential oils induces absolute mental peace and gently reduces anxiety.
+                        <strong class="text-spaText">Lavender Aromatherapy:</strong> Pure organic essential oils induce absolute mental peace and gently reduce anxiety.
                         <span class="block italic text-gray-500 text-xs mt-0.5">
                             <strong>Aromaterapia de Lavanda:</strong> El uso de aceites esenciales puros induce un estado mental de paz y disminuye los niveles de ansiedad.
                         </span>
@@ -137,15 +153,14 @@
                 </li>
             </ul>
 
-            <!-- Investment & Location / Inversión y Ubicación -->
-            <div class="mt-8 pt-6 border-t border-spaPink/60 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="pt-6 border-t border-spaPink/60 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div class="text-center sm:text-left">
                     <span class="text-xs font-semibold uppercase tracking-wider text-spaDarkPink block">
                         Price / Precio
                     </span>
                     <span class="text-3xl font-serif text-spaText">$95 <span class="text-sm font-sans font-semibold text-gray-500">USD</span></span>
                 </div>
-                <div class="text-center sm:text-right bg-white/60 p-3 rounded-2xl border border-spaPink/40">
+                <div class="text-center sm:text-right bg-spaPink/30 p-3 rounded-2xl border border-spaPink/40">
                     <span class="text-[10px] font-semibold uppercase tracking-widest text-spaDarkPink block">
                         Location / Ubicación
                     </span>
@@ -155,26 +170,322 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Booking Button / Botón de Reservas -->
-        <div class="text-center">
-            <a href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20book%20a%20Signature%20Ritual%20session.%20/%20¡Hola%20Nancy!%20Me%20gustaría%20reservar%20una%20sesión%20del%20Ritual%20Signature." 
-               target="_blank"
-               class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center">
-                Book Your Session / Reserva Tu Cita
-            </a>
-            <span class="block text-gray-400 text-[11px] mt-2 italic">
-                Direct booking via WhatsApp • Reserva directa por WhatsApp
-            </span>
-        </div>
+        <!-- NEW: INTERACTIVE SCHEDULING CALENDAR -->
+        <section class="max-w-3xl mx-auto space-y-6">
+            <div class="text-center">
+                <h3 class="text-3xl text-spaText font-serif">1. Select Date & Time</h3>
+                <h4 class="text-md text-spaDarkPink font-serif italic">Selecciona Fecha y Hora</h4>
+                <p class="text-xs text-gray-500 mt-2">Pick a day and your preferred time slot below / Elige un día y tu horario preferido</p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Calendar Days Generator (Current Month Mock) -->
+                <div>
+                    <div class="flex justify-between items-center mb-4 border-b border-spaPink pb-2">
+                        <span class="font-semibold text-spaText text-sm" id="calendar-month-year">July 2026</span>
+                        <span class="text-xs text-spaDarkPink uppercase tracking-widest font-semibold">Studio/Home</span>
+                    </div>
+                    <!-- Weekday Headers -->
+                    <div class="grid grid-cols-7 text-center text-xs font-semibold text-gray-400 mb-2">
+                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                    </div>
+                    <!-- Days Grid -->
+                    <div class="grid grid-cols-7 gap-2 text-center" id="calendar-days">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Time Slot Selector -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <span class="block font-semibold text-spaText text-sm mb-3 border-b border-spaPink pb-2">
+                            Available Hours / Horas Disponibles:
+                        </span>
+                        <div class="grid grid-cols-2 gap-3" id="time-slots-container">
+                            <button onclick="selectTime('9:00 AM')" class="time-slot-btn border border-spaPink rounded-xl py-3 text-xs font-semibold text-spaText hover:bg-spaPink hover:border-spaDarkPink transition duration-200">
+                                9:00 AM
+                            </button>
+                            <button onclick="selectTime('11:30 AM')" class="time-slot-btn border border-spaPink rounded-xl py-3 text-xs font-semibold text-spaText hover:bg-spaPink hover:border-spaDarkPink transition duration-200">
+                                11:30 AM
+                            </button>
+                            <button onclick="selectTime('2:00 PM')" class="time-slot-btn border border-spaPink rounded-xl py-3 text-xs font-semibold text-spaText hover:bg-spaPink hover:border-spaDarkPink transition duration-200">
+                                2:00 PM
+                            </button>
+                            <button onclick="selectTime('4:30 PM')" class="time-slot-btn border border-spaPink rounded-xl py-3 text-xs font-semibold text-spaText hover:bg-spaPink hover:border-spaDarkPink transition duration-200">
+                                4:30 PM
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Summary Selection -->
+                    <div class="mt-6 p-4 bg-spaPink/30 rounded-2xl border border-spaPink/60 text-center md:text-left">
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-spaDarkPink block">Your Booking / Tu Reserva</span>
+                        <p class="text-sm font-semibold text-spaText mt-1" id="booking-summary-text">
+                            Please select a date and time slot above / Por favor selecciona fecha y hora arriba
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Booking Button -->
+            <div class="text-center pt-2">
+                <a id="whatsapp-booking-btn"
+                   href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20book%20a%20Signature%20Ritual%20session." 
+                   target="_blank"
+                   class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center opacity-60 cursor-not-allowed pointer-events-none">
+                    Confirm Date & Book / Confirmar Fecha y Reservar
+                </a>
+            </div>
+        </section>
+
+        <!-- NEW: DIGITAL GIFT CARD CUSTOMIZER -->
+        <section class="max-w-3xl mx-auto space-y-6">
+            <div class="text-center">
+                <h3 class="text-3xl text-spaText font-serif">2. Customize a Digital Gift Card</h3>
+                <h4 class="text-md text-spaDarkPink font-serif italic">Personaliza tu Tarjeta de Regalo</h4>
+                <p class="text-xs text-gray-500 mt-2">Create the perfect "I love you Amiga!" gift in real-time / Crea el regalo ideal en tiempo real</p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Form Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">To / Para (Name):</label>
+                        <input type="text" id="gc-to" oninput="updateGiftCard()" placeholder="e.g. Maria" class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">From / De (Your Name):</label>
+                        <input type="text" id="gc-from" oninput="updateGiftCard()" placeholder="e.g. Aly" class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">Message / Mensaje:</label>
+                        <textarea id="gc-message" oninput="updateGiftCard()" rows="3" placeholder="Write a heartwarming note... / Escribe una dedicatoria..." class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink resize-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-2">Choose Design / Elige el Diseño:</label>
+                        <div class="flex gap-4">
+                            <button onclick="changeCardDesign('pink')" class="flex-1 bg-spaPink text-spaDarkPink border border-spaDarkPink rounded-xl py-2 text-xs font-semibold focus:outline-none hover:bg-rose-100 transition">
+                                Pink Orchid
+                            </button>
+                            <button onclick="changeCardDesign('gold')" class="flex-1 bg-amber-50 text-amber-700 border border-amber-300 rounded-xl py-2 text-xs font-semibold focus:outline-none hover:bg-amber-100 transition">
+                                Luxury Gold
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Preview of the Gift Card -->
+                <div class="flex justify-center">
+                    <div id="gift-card-preview" class="w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FFF5F5] to-[#F9ECEE] border-2 border-spaDarkPink rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300">
+                        <!-- Decorative design element inside preview card -->
+                        <div class="absolute -right-8 -top-8 w-24 h-24 bg-spaPink rounded-full opacity-40"></div>
+                        <div class="absolute -left-8 -bottom-8 w-24 h-24 bg-spaPink rounded-full opacity-30"></div>
+                        
+                        <!-- Header inside card -->
+                        <div class="flex justify-between items-start z-10">
+                            <div>
+                                <span class="font-serif italic text-spaDarkPink text-lg font-bold">Mia</span>
+                                <span class="text-[10px] text-spaText tracking-widest uppercase font-semibold">Spa</span>
+                            </div>
+                            <span class="text-[9px] bg-white text-spaDarkPink border border-spaPink px-2.5 py-1 rounded-full font-bold uppercase tracking-widest">
+                                Voucher
+                            </span>
+                        </div>
+
+                        <!-- Card Body Message -->
+                        <div class="my-3 text-center z-10">
+                            <p class="text-[10px] text-spaDarkPink uppercase tracking-widest font-semibold mb-1" id="preview-tag">I Love You Amiga! / Te Quiero Amiga!</p>
+                            <h5 class="font-serif text-lg text-spaText italic" id="preview-to">To: Dear Friend</h5>
+                            <p class="text-[10px] text-gray-500 line-clamp-2 mt-1 px-2" id="preview-msg">"An unforgettable hour of tranquility, massage & hot volcanic stones designed especially for you."</p>
+                        </div>
+
+                        <!-- Footer inside card -->
+                        <div class="flex justify-between items-end border-t border-spaPink/60 pt-2 z-10">
+                            <span class="text-[9px] text-gray-400" id="preview-from">From: Aly</span>
+                            <span class="text-[11px] font-semibold text-spaText font-serif">Valued at: $95 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gift Card Order Action -->
+            <div class="text-center pt-2">
+                <a id="gc-order-btn"
+                   href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20order%20a%20digital%20gift%20card." 
+                   target="_blank"
+                   class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center">
+                    Purchase This Gift Card / Comprar Tarjeta de Regalo
+                </a>
+            </div>
+        </section>
 
     </main>
 
     <!-- Footer / Pie de página -->
-    <footer class="w-full max-w-4xl mx-auto px-6 py-6 border-t border-spaPink/40 text-center text-xs text-gray-400">
-        <p>&copy; 2026 Mia Spa. All rights reserved / Todos los derechos reservados.</p>
+    <footer class="w-full max-w-5xl mx-auto px-6 py-8 border-t border-spaPink/40 text-center space-y-4">
+        <!-- Socials in Footer -->
+        <div class="flex justify-center items-center gap-4 text-spaDarkPink">
+            <a href="https://www.instagram.com/spa.miabeauty/" target="_blank" class="hover:text-spaText transition duration-200">
+                <i class="fa-brands fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://www.tiktok.com/@miaspa17" target="_blank" class="hover:text-spaText transition duration-200">
+                <i class="fa-brands fa-tiktok text-xl"></i>
+            </a>
+        </div>
+        
+        <!-- Address & Contact -->
+        <p class="text-xs text-gray-500 font-semibold">
+            1731 Crossroads Vista Dr, Raleigh, NC 27606 | Mobile: +1 (919) 455-1783
+        </p>
+
+        <!-- Copyright -->
+        <p class="text-[11px] text-gray-400">
+            &copy; 2026 Mia Spa. All rights reserved / Todos los derechos reservados.
+        </p>
     </footer>
+
+    <!-- JavaScript For Interactivity -->
+    <script>
+        // State variables for Date and Time Selection
+        let selectedDate = null;
+        let selectedTime = null;
+
+        // Initialize Calendar
+        function generateCalendar() {
+            const calendarDaysContainer = document.getElementById('calendar-days');
+            calendarDaysContainer.innerHTML = '';
+
+            // Generating Mock dates for July 2026
+            const totalDays = 31;
+            const startOffset = 2; // Wednesday (July 1, 2026) -> Mo=0, Tu=1, We=2
+
+            // Blank spaces for offset
+            for (let i = 0; i < startOffset; i++) {
+                const blank = document.createElement('span');
+                calendarDaysContainer.appendChild(blank);
+            }
+
+            // Real Days
+            for (let day = 1; day <= totalDays; day++) {
+                const dayBtn = document.createElement('button');
+                dayBtn.innerText = day;
+                dayBtn.className = "calendar-day-btn py-2 text-xs font-semibold rounded-lg text-spaText hover:bg-spaPink hover:text-spaDarkPink transition duration-150";
+                
+                // Exclude Sundays for spa relaxation slots
+                const dayOfWeek = (day + startOffset - 1) % 7; 
+                if (dayOfWeek === 6) { // Sunday
+                    dayBtn.className += " opacity-30 cursor-not-allowed";
+                    dayBtn.disabled = true;
+                } else {
+                    dayBtn.onclick = () => selectDate(day);
+                }
+                calendarDaysContainer.appendChild(dayBtn);
+            }
+        }
+
+        function selectDate(day) {
+            // Remove active classes
+            document.querySelectorAll('.calendar-day-btn').forEach(btn => {
+                btn.classList.remove('bg-spaDarkPink', 'text-white', 'hover:bg-spaDarkPink');
+            });
+
+            // Find clicked day button and color it
+            const buttons = document.querySelectorAll('.calendar-day-btn');
+            // Adding active styling to chosen button
+            buttons.forEach(btn => {
+                if (parseInt(btn.innerText) === day && !btn.disabled) {
+                    btn.classList.add('bg-spaDarkPink', 'text-white');
+                }
+            });
+
+            selectedDate = `July ${day}, 2026`;
+            updateBookingSummary();
+        }
+
+        function selectTime(time) {
+            // Remove active styles from time slots
+            document.querySelectorAll('.time-slot-btn').forEach(btn => {
+                btn.classList.remove('bg-spaDarkPink', 'text-white', 'border-spaDarkPink');
+                btn.classList.add('text-spaText');
+            });
+
+            // Find the clicked slot and apply highlight
+            event.target.classList.add('bg-spaDarkPink', 'text-white', 'border-spaDarkPink');
+            event.target.classList.remove('text-spaText');
+
+            selectedTime = time;
+            updateBookingSummary();
+        }
+
+        function updateBookingSummary() {
+            const summaryText = document.getElementById('booking-summary-text');
+            const bookingBtn = document.getElementById('whatsapp-booking-btn');
+
+            if (selectedDate && selectedTime) {
+                summaryText.innerHTML = `✨ <strong>${selectedDate}</strong> at <strong>${selectedTime}</strong> <br> <span class="text-xs text-spaDarkPink">Perfect! Ready to book. / ¡Perfecto! Listo para reservar.</span>`;
+                
+                // Enable WhatsApp button
+                bookingBtn.classList.remove('opacity-60', 'cursor-not-allowed', 'pointer-events-none');
+                
+                // Set bilingue pre-filled message URL
+                const encodedMsg = encodeURIComponent(
+                    `Hi Nancy! I'd like to book a Signature Ritual session on ${selectedDate} at ${selectedTime}.\n\n` +
+                    `¡Hola Nancy! Me gustaría reservar una sesión del Ritual Signature el día ${selectedDate} a las ${selectedTime}.`
+                );
+                bookingBtn.href = `https://wa.me/19194551783?text=${encodedMsg}`;
+            } else if (selectedDate) {
+                summaryText.innerHTML = `📅 selected <strong>${selectedDate}</strong>. Now choose a time slot. / selecciona una hora.`;
+            } else if (selectedTime) {
+                summaryText.innerHTML = `⏰ selected <strong>${selectedTime}</strong>. Now pick a day on the calendar. / selecciona un día.`;
+            }
+        }
+
+        // Live Gift Card Preview Logic
+        function updateGiftCard() {
+            const toVal = document.getElementById('gc-to').value.trim() || 'Dear Friend';
+            const fromVal = document.getElementById('gc-from').value.trim() || 'Aly';
+            const msgVal = document.getElementById('gc-message').value.trim() || 'An unforgettable hour of tranquility, massage & hot volcanic stones designed especially for you.';
+
+            document.getElementById('preview-to').innerText = `To: ${toVal}`;
+            document.getElementById('preview-from').innerText = `From: ${fromVal}`;
+            document.getElementById('preview-msg').innerText = `"${msgVal}"`;
+
+            // Update WhatsApp Order Button link dynamically
+            const encodedGCMsg = encodeURIComponent(
+                `Hi Nancy! I'd like to order a Personalized Digital Gift Card:\n\n` +
+                `• To / Para: ${toVal}\n` +
+                `• From / De: ${fromVal}\n` +
+                `• Message / Mensaje: "${msgVal}"\n` +
+                `• Value / Valor: $95 USD\n\n` +
+                `Please send me payment instructions to issue this digital voucher.`
+            );
+            document.getElementById('gc-order-btn').href = `https://wa.me/19194551783?text=${encodedGCMsg}`;
+        }
+
+        function changeCardDesign(style) {
+            const previewCard = document.getElementById('gift-card-preview');
+            const previewTag = document.getElementById('preview-tag');
+            
+            if (style === 'pink') {
+                previewCard.className = "w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FFF5F5] to-[#F9ECEE] border-2 border-spaDarkPink rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300";
+                previewTag.className = "text-[10px] text-spaDarkPink uppercase tracking-widest font-semibold mb-1";
+            } else if (style === 'gold') {
+                previewCard.className = "w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FAF5E6] to-[#FFFDF9] border-2 border-spaGold rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300";
+                previewTag.className = "text-[10px] text-amber-600 uppercase tracking-widest font-semibold mb-1";
+            }
+        }
+
+        // Run functions on load
+        window.onload = function() {
+            generateCalendar();
+            updateGiftCard(); // Load initial gift card link
+        };
+    </script>
 
 </body>
 </html>
