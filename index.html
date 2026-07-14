@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,17 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: 'Montserrat', sans-serif; color: #4A3538; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        /* Contenedor para que el texto de la tarjeta sea responsivo */
+        .giftcard-wrapper {
+            container-type: inline-size;
+            container-name: card;
+        }
+        
+        /* Imagen de fondo de la tarjeta */
         .giftcard-container {
             background-image: url('Copia%20de%20Gift%20Card%20Mia%20SpaElegance.png');
             background-size: cover;
@@ -35,100 +42,140 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
             overflow: hidden;
         }
+        
+        /* Ajuste de tamaño de fuente relativo al contenedor (cqi) */
+        .card-text { font-size: 4cqi; }
+        .card-msg { font-size: 3cqi; }
+        
+        /* Estados seleccionados */
         .day-btn.selected { background-color: #DCA9B0 !important; color: white !important; }
         .time-slot-btn.selected { background-color: #DCA9B0 !important; color: white !important; }
+        .service-btn.selected { background-color: #DCA9B0 !important; color: white !important; border-color: #DCA9B0 !important; }
     </style>
 </head>
 <body class="bg-[#faf6f6] min-h-screen">
 
     <main class="w-full max-w-5xl mx-auto px-4 py-12 space-y-16">
         
-        <!-- CALENDAR SECTION -->
-        <section class="max-w-3xl mx-auto space-y-6">
-            <div class="text-center">
-                <h3 class="text-3xl text-spaText font-serif">1. Select Date & Time</h3>
-                <h4 class="text-md text-spaDarkPink font-serif italic">Selecciona Fecha y Hora</h4>
+        <!-- SECCIÓN: CALENDARIO Y SERVICIOS -->
+        <section class="max-w-4xl mx-auto space-y-6">
+            <div class="text-center mb-8">
+                <h3 class="text-4xl text-spaText font-serif">1. Seleccionar Servicio y Horario</h3>
             </div>
 
-            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Calendar -->
-                <div>
-                    <div class="flex justify-between items-center mb-4 border-b border-spaPink pb-2">
-                        <span class="font-semibold text-spaText text-sm" id="calendar-month-year">July 2026</span>
+            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Columna Servicios -->
+                <div class="space-y-4">
+                    <span class="block font-semibold text-spaText text-sm mb-2">Tratamientos Disponibles:</span>
+                    <div class="space-y-3" id="service-options">
+                        <!-- Botón de Servicio: Puedes añadir más botones siguiendo esta estructura -->
+                        <button onclick="selectService('Ritual Signature (60m)', 95, this)" class="service-btn w-full text-left border border-spaPink rounded-xl p-4 hover:bg-spaPink transition flex justify-between items-center">
+                            <span>Ritual Signature (60m)</span>
+                            <span class="font-bold text-spaDarkPink">$95</span>
+                        </button>
+                        <button onclick="selectService('Stone Therapy (60m)', 110, this)" class="service-btn w-full text-left border border-spaPink rounded-xl p-4 hover:bg-spaPink transition flex justify-between items-center">
+                            <span>Stone Therapy (60m)</span>
+                            <span class="font-bold text-spaDarkPink">$110</span>
+                        </button>
                     </div>
-                    <div class="grid grid-cols-7 text-center text-xs font-semibold text-gray-400 mb-2">
-                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
-                    </div>
-                    <div class="grid grid-cols-7 gap-2 text-center" id="calendar-days"></div>
                 </div>
 
-                <!-- Time & Summary -->
-                <div class="flex flex-col gap-6">
+                <!-- Columna Calendario -->
+                <div class="space-y-6">
                     <div>
-                        <span class="block font-semibold text-spaText text-sm mb-3">Available Hours:</span>
-                        <div class="grid grid-cols-2 gap-3" id="time-slots">
-                            <button onclick="selectTime('9:00 AM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">9:00 AM</button>
-                            <button onclick="selectTime('11:30 AM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">11:30 AM</button>
-                            <button onclick="selectTime('2:00 PM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">2:00 PM</button>
-                            <button onclick="selectTime('4:30 PM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">4:30 PM</button>
+                        <span class="block font-semibold text-spaText text-sm mb-3">Julio 2026</span>
+                        <div class="grid grid-cols-7 gap-1 text-center text-[10px] text-gray-400 mb-2 font-bold uppercase">
+                            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
                         </div>
+                        <div class="grid grid-cols-7 gap-1" id="calendar-days"></div>
                     </div>
-                    <div class="p-4 bg-spaPink/30 rounded-2xl border border-spaPink/60">
-                        <span class="text-[10px] uppercase font-bold text-spaDarkPink">Your Booking</span>
-                        <p class="text-sm font-semibold text-spaText mt-1" id="booking-summary-text">Please select date & time</p>
+                    
+                    <div class="grid grid-cols-2 gap-2" id="time-slots">
+                        <!-- Slots de tiempo -->
+                        <button onclick="selectTime('9:00 AM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">9:00 AM</button>
+                        <button onclick="selectTime('11:30 AM', this)" class="time-slot-btn border border-spaPink rounded-xl py-2 text-xs font-semibold hover:bg-spaPink transition">11:30 AM</button>
                     </div>
-                    <a id="whatsapp-booking-btn" href="#" target="_blank" class="w-full bg-spaDarkPink text-white text-xs font-bold uppercase py-4 rounded-full text-center transition opacity-60 pointer-events-none">
-                        Confirm & Book
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- GIFT CARD SECTION -->
+        <!-- SECCIÓN: GIFT CARD PERSONALIZADA -->
         <section class="max-w-4xl mx-auto space-y-6">
             <div class="text-center">
-                <h3 class="text-3xl text-spaText font-serif">2. Customize Gift Card</h3>
+                <h3 class="text-4xl text-spaText font-serif">2. Personalizar Gift Card</h3>
             </div>
             <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
-                    <input type="text" id="gc-to" oninput="updateGiftCard()" placeholder="To (Name)" class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none">
-                    <input type="text" id="gc-from" oninput="updateGiftCard()" placeholder="From (Your Name)" class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none">
-                    <textarea id="gc-message" oninput="updateGiftCard()" rows="3" placeholder="Message..." class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none"></textarea>
+                    <input type="text" id="gc-to" oninput="updateGiftCard()" placeholder="Para (Nombre)" class="w-full border border-spaPink rounded-xl px-4 py-3 text-sm focus:outline-none">
+                    <input type="text" id="gc-from" oninput="updateGiftCard()" placeholder="De (Tu Nombre)" class="w-full border border-spaPink rounded-xl px-4 py-3 text-sm focus:outline-none">
+                    <textarea id="gc-message" oninput="updateGiftCard()" rows="3" placeholder="Mensaje..." class="w-full border border-spaPink rounded-xl px-4 py-3 text-sm focus:outline-none"></textarea>
                 </div>
+                
                 <div class="flex flex-col items-center">
-                    <div id="capture-container" class="w-full giftcard-container">
-                        <div class="absolute text-center px-4 flex items-center justify-center text-[#F9ECEE]" style="top: 45%; left: 8%; right: 8%; height: 14%;">
-                            <span id="preview-msg" class="text-[2.6cqw] font-serif italic"></span>
+                    <div class="w-full giftcard-wrapper">
+                        <div id="capture-container" class="giftcard-container">
+                            <!-- Posicionamiento absoluto de los textos sobre la imagen -->
+                            <div class="absolute inset-0 flex flex-col justify-center items-center">
+                                <div class="absolute text-center px-8" style="top: 45%;">
+                                    <span id="preview-msg" class="card-msg font-serif italic text-[#F9ECEE]"></span>
+                                </div>
+                                <div class="absolute" style="top: 60%; left: 35%;">
+                                    <span id="preview-from" class="card-text text-[#F9ECEE] font-semibold"></span>
+                                </div>
+                                <div class="absolute" style="top: 67%; left: 35%;">
+                                    <span id="preview-to" class="card-text text-[#F9ECEE] font-semibold"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="absolute text-[#F9ECEE] font-semibold" style="top: 59%; left: 36%;"><span id="preview-from"></span></div>
-                        <div class="absolute text-[#F9ECEE] font-semibold" style="top: 66%; left: 36%;"><span id="preview-to"></span></div>
                     </div>
-                    <button onclick="downloadGiftCard()" class="mt-4 text-spaDarkPink text-xs font-bold uppercase underline">Download Image</button>
+                    <!-- Botón para descargar -->
+                    <button onclick="downloadGiftCard()" class="mt-4 text-spaDarkPink text-xs font-bold uppercase underline hover:text-spaText">Descargar Tarjeta</button>
                 </div>
+            </div>
+            
+            <div class="text-center pt-8">
+                <a id="whatsapp-booking-btn" href="#" target="_blank" class="inline-block bg-spaDarkPink text-white font-bold uppercase py-4 px-12 rounded-full transition opacity-60 pointer-events-none hover:bg-spaText shadow-lg">
+                    Finalizar Reserva
+                </a>
             </div>
         </section>
     </main>
 
     <script>
+        // Variables de estado
         let selectedDate = '';
         let selectedTime = '';
+        let selectedService = '';
+        let servicePrice = 0;
 
+        // FUNCIÓN: Generar días del calendario
         function generateCalendar() {
             const container = document.getElementById('calendar-days');
             for(let i = 1; i <= 31; i++) {
                 const btn = document.createElement('button');
                 btn.innerText = i;
-                btn.className = 'day-btn border border-spaPink rounded-lg p-2 text-xs hover:bg-spaPink';
+                btn.className = 'day-btn border border-spaPink rounded-lg p-2 text-xs hover:bg-spaPink transition';
                 btn.onclick = () => {
                     document.querySelectorAll('.day-btn').forEach(el => el.classList.remove('selected'));
                     btn.classList.add('selected');
-                    selectedDate = `July ${i}, 2026`;
+                    selectedDate = `Julio ${i}, 2026`;
                     updateState();
                 };
                 container.appendChild(btn);
             }
         }
 
+        // FUNCIÓN: Seleccionar servicio
+        function selectService(name, price, btn) {
+            document.querySelectorAll('.service-btn').forEach(el => el.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedService = name;
+            servicePrice = price;
+            updateState();
+        }
+
+        // FUNCIÓN: Seleccionar horario
         function selectTime(time, btn) {
             document.querySelectorAll('.time-slot-btn').forEach(el => el.classList.remove('selected'));
             btn.classList.add('selected');
@@ -136,40 +183,46 @@
             updateState();
         }
 
+        // FUNCIÓN: Actualizar estado de botones
         function updateState() {
-            const summary = document.getElementById('booking-summary-text');
             const btn = document.getElementById('whatsapp-booking-btn');
-            if(selectedDate && selectedTime) {
-                summary.innerText = `${selectedDate} at ${selectedTime}`;
+            if(selectedDate && selectedTime && selectedService) {
                 btn.classList.remove('opacity-60', 'pointer-events-none');
                 updateWhatsAppLink();
             }
         }
 
+        // FUNCIÓN: Generar mensaje para WhatsApp (Estructura organizada para Nancy)
         function updateWhatsAppLink() {
             const btn = document.getElementById('whatsapp-booking-btn');
             const to = document.getElementById('gc-to').value;
             const from = document.getElementById('gc-from').value;
             const msg = document.getElementById('gc-message').value;
 
-            const message = `✨ *NUEVA SOLICITUD - MIA SPA* ✨\n\n` +
-                            `📅 *Cita:* ${selectedDate} a las ${selectedTime}\n\n` +
-                            `🎁 *Gift Card:* \n` +
-                            `• Para: ${to || 'N/A'}\n` +
-                            `• De: ${from || 'N/A'}\n` +
-                            `• Nota: "${msg || 'Sin mensaje'}"\n\n` +
-                            `*Por favor, confírmame los datos de pago.*`;
+            const message = `✨ *NUEVA SOLICITUD DE RESERVA Y GIFT CARD* ✨\n\n` +
+                            `👤 *Cliente:* ${from || 'No especificado'}\n\n` +
+                            `💆‍♀️ *Servicio Seleccionado:*\n` +
+                            `${selectedService} ($${servicePrice} USD)\n\n` +
+                            `📅 *Fecha:* ${selectedDate}\n` +
+                            `⏰ *Hora:* ${selectedTime}\n\n` +
+                            `--- \n\n` +
+                            `🎁 *DETALLES GIFT CARD:*\n` +
+                            `• *Para:* ${to || 'N/A'}\n` +
+                            `• *Mensaje:* "${msg || 'Ninguna dedicatoria'}"\n\n` +
+                            `Por favor, envíame los datos de pago para procesar la reserva.`;
             
             btn.href = `https://wa.me/19194551783?text=${encodeURIComponent(message)}`;
         }
 
+        // FUNCIÓN: Actualizar vista previa de la tarjeta
         function updateGiftCard() {
-            document.getElementById('preview-to').innerText = document.getElementById('gc-to').value;
-            document.getElementById('preview-from').innerText = document.getElementById('gc-from').value;
+            document.getElementById('preview-to').innerText = document.getElementById('gc-to').value ? `PARA: ${document.getElementById('gc-to').value}` : '';
+            document.getElementById('preview-from').innerText = document.getElementById('gc-from').value ? `DE: ${document.getElementById('gc-from').value}` : '';
             document.getElementById('preview-msg').innerText = document.getElementById('gc-message').value ? `"${document.getElementById('gc-message').value}"` : '';
             updateWhatsAppLink();
         }
 
+        // FUNCIÓN: Descargar imagen en alta resolución
         function downloadGiftCard() {
             html2canvas(document.getElementById('capture-container'), { scale: 3 }).then(canvas => {
                 const link = document.createElement('a');
@@ -179,6 +232,7 @@
             });
         }
 
+        // Inicializar al cargar
         window.onload = generateCalendar;
     </script>
 </body>
