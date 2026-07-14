@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mia Spa - Wellness & Automation Experience</title>
+    <title>Mia Spa - Wellness Experience / Experiencia de Bienestar</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,7 +14,6 @@
                         spaPink: '#F9ECEE',
                         spaDarkPink: '#DCA9B0',
                         spaText: '#4A3538',
-                        spaGold: '#D4AF37',
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'Georgia', 'serif'],
@@ -24,7 +23,7 @@
             }
         }
     </script>
-    <!-- Google Fonts & FontAwesome Icons -->
+    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -35,7 +34,7 @@
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
         }
-        /* Custom scrollbar for beautiful presentation */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -45,6 +44,19 @@
         ::-webkit-scrollbar-thumb {
             background: #DCA9B0;
             border-radius: 4px;
+        }
+        /* Container Query for flawless scaling of text over the custom image background */
+        .giftcard-container {
+            container-type: inline-size;
+            background-image: url('Copia%20de%20Gift%20Card%20Mia%20SpaElegance.png');
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 1056 / 748;
+            position: relative;
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
         }
     </style>
 </head>
@@ -172,7 +184,7 @@
             </div>
         </section>
 
-        <!-- NEW: INTERACTIVE SCHEDULING CALENDAR -->
+        <!-- INTERACTIVE SCHEDULING CALENDAR -->
         <section class="max-w-3xl mx-auto space-y-6">
             <div class="text-center">
                 <h3 class="text-3xl text-spaText font-serif">1. Select Date & Time</h3>
@@ -181,19 +193,17 @@
             </div>
 
             <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Calendar Days Generator (Current Month Mock) -->
+                <!-- Calendar Days -->
                 <div>
                     <div class="flex justify-between items-center mb-4 border-b border-spaPink pb-2">
                         <span class="font-semibold text-spaText text-sm" id="calendar-month-year">July 2026</span>
                         <span class="text-xs text-spaDarkPink uppercase tracking-widest font-semibold">Studio/Home</span>
                     </div>
-                    <!-- Weekday Headers -->
                     <div class="grid grid-cols-7 text-center text-xs font-semibold text-gray-400 mb-2">
                         <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
                     </div>
-                    <!-- Days Grid -->
                     <div class="grid grid-cols-7 gap-2 text-center" id="calendar-days">
-                        <!-- Filled by JS -->
+                        <!-- Generado por JS -->
                     </div>
                 </div>
 
@@ -203,7 +213,7 @@
                         <span class="block font-semibold text-spaText text-sm mb-3 border-b border-spaPink pb-2">
                             Available Hours / Horas Disponibles:
                         </span>
-                        <div class="grid grid-cols-2 gap-3" id="time-slots-container">
+                        <div class="grid grid-cols-2 gap-3">
                             <button onclick="selectTime('9:00 AM')" class="time-slot-btn border border-spaPink rounded-xl py-3 text-xs font-semibold text-spaText hover:bg-spaPink hover:border-spaDarkPink transition duration-200">
                                 9:00 AM
                             </button>
@@ -219,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- Summary Selection -->
                     <div class="mt-6 p-4 bg-spaPink/30 rounded-2xl border border-spaPink/60 text-center md:text-left">
                         <span class="text-[10px] uppercase tracking-widest font-bold text-spaDarkPink block">Your Booking / Tu Reserva</span>
                         <p class="text-sm font-semibold text-spaText mt-1" id="booking-summary-text">
@@ -229,10 +238,9 @@
                 </div>
             </div>
 
-            <!-- Dynamic Booking Button -->
             <div class="text-center pt-2">
                 <a id="whatsapp-booking-btn"
-                   href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20book%20a%20Signature%20Ritual%20session." 
+                   href="#" 
                    target="_blank"
                    class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center opacity-60 cursor-not-allowed pointer-events-none">
                     Confirm Date & Book / Confirmar Fecha y Reservar
@@ -240,17 +248,17 @@
             </div>
         </section>
 
-        <!-- NEW: DIGITAL GIFT CARD CUSTOMIZER -->
-        <section class="max-w-3xl mx-auto space-y-6">
+        <!-- DIGITAL GIFT CARD CUSTOMIZER -->
+        <section class="max-w-4xl mx-auto space-y-6">
             <div class="text-center">
                 <h3 class="text-3xl text-spaText font-serif">2. Customize a Digital Gift Card</h3>
                 <h4 class="text-md text-spaDarkPink font-serif italic">Personaliza tu Tarjeta de Regalo</h4>
                 <p class="text-xs text-gray-500 mt-2">Create the perfect "I love you Amiga!" gift in real-time / Crea el regalo ideal en tiempo real</p>
             </div>
 
-            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Form Fields -->
-                <div class="space-y-4">
+            <div class="bg-white rounded-3xl border border-spaPink p-6 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Form Fields (Left) -->
+                <div class="lg:col-span-5 space-y-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">To / Para (Name):</label>
                         <input type="text" id="gc-to" oninput="updateGiftCard()" placeholder="e.g. Maria" class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink">
@@ -262,61 +270,44 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">Message / Mensaje:</label>
-                        <textarea id="gc-message" oninput="updateGiftCard()" rows="3" placeholder="Write a heartwarming note... / Escribe una dedicatoria..." class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink resize-none"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-2">Choose Design / Elige el Diseño:</label>
-                        <div class="flex gap-4">
-                            <button onclick="changeCardDesign('pink')" class="flex-1 bg-spaPink text-spaDarkPink border border-spaDarkPink rounded-xl py-2 text-xs font-semibold focus:outline-none hover:bg-rose-100 transition">
-                                Pink Orchid
-                            </button>
-                            <button onclick="changeCardDesign('gold')" class="flex-1 bg-amber-50 text-amber-700 border border-amber-300 rounded-xl py-2 text-xs font-semibold focus:outline-none hover:bg-amber-100 transition">
-                                Luxury Gold
-                            </button>
-                        </div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-spaDarkPink mb-1">Message / Dedicatoria:</label>
+                        <textarea id="gc-message" oninput="updateGiftCard()" rows="3" placeholder="Write a short message for your friend / Escribe una dedicatoria corta..." class="w-full border border-spaPink rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-spaDarkPink resize-none"></textarea>
                     </div>
                 </div>
 
-                <!-- Live Preview of the Gift Card -->
-                <div class="flex justify-center">
-                    <div id="gift-card-preview" class="w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FFF5F5] to-[#F9ECEE] border-2 border-spaDarkPink rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300">
-                        <!-- Decorative design element inside preview card -->
-                        <div class="absolute -right-8 -top-8 w-24 h-24 bg-spaPink rounded-full opacity-40"></div>
-                        <div class="absolute -left-8 -bottom-8 w-24 h-24 bg-spaPink rounded-full opacity-30"></div>
+                <!-- Live Premium Custom Image Preview (Right) -->
+                <div class="lg:col-span-7 flex flex-col items-center">
+                    <div class="w-full max-w-md giftcard-container rounded-2xl shadow-xl border border-spaPink relative">
                         
-                        <!-- Header inside card -->
-                        <div class="flex justify-between items-start z-10">
-                            <div>
-                                <span class="font-serif italic text-spaDarkPink text-lg font-bold">Mia</span>
-                                <span class="text-[10px] text-spaText tracking-widest uppercase font-semibold">Spa</span>
-                            </div>
-                            <span class="text-[9px] bg-white text-spaDarkPink border border-spaPink px-2.5 py-1 rounded-full font-bold uppercase tracking-widest">
-                                Voucher
+                        <!-- Dynamic Message Text Overlay with Luxury Glassmorphism Container (Will not overlap the title message) -->
+                        <div class="absolute text-center px-4 flex items-center justify-center text-white bg-black/30 backdrop-blur-[2px] border border-white/10 rounded-2xl" 
+                             style="top: 48%; left: 8%; right: 8%; height: 16%;">
+                            <span id="preview-msg" class="w-full text-[2.7cqw] font-serif italic leading-snug line-clamp-2 text-white">
+                                "An unforgettable hour of tranquility, massage & hot volcanic stones designed especially for you."
                             </span>
                         </div>
 
-                        <!-- Card Body Message -->
-                        <div class="my-3 text-center z-10">
-                            <p class="text-[10px] text-spaDarkPink uppercase tracking-widest font-semibold mb-1" id="preview-tag">I Love You Amiga! / Te Quiero Amiga!</p>
-                            <h5 class="font-serif text-lg text-spaText italic" id="preview-to">To: Dear Friend</h5>
-                            <p class="text-[10px] text-gray-500 line-clamp-2 mt-1 px-2" id="preview-msg">"An unforgettable hour of tranquility, massage & hot volcanic stones designed especially for you."</p>
+                        <!-- Dynamic "OF" Sender Name -->
+                        <div class="absolute text-white font-semibold" 
+                             style="top: 66.5%; left: 34%;">
+                            <span id="preview-from" class="text-[2.6cqw] tracking-wide">Aly</span>
                         </div>
 
-                        <!-- Footer inside card -->
-                        <div class="flex justify-between items-end border-t border-spaPink/60 pt-2 z-10">
-                            <span class="text-[9px] text-gray-400" id="preview-from">From: Aly</span>
-                            <span class="text-[11px] font-semibold text-spaText font-serif">Valued at: $95 USD</span>
+                        <!-- Dynamic "FOR" Recipient Name -->
+                        <div class="absolute text-white font-semibold" 
+                             style="top: 73.5%; left: 37%;">
+                            <span id="preview-to" class="text-[2.6cqw] tracking-wide">Maria</span>
                         </div>
+
                     </div>
+                    <span class="text-[10px] text-gray-400 mt-3 italic">Live interactive preview of your real voucher / Vista previa interactiva en tiempo real</span>
                 </div>
             </div>
 
             <!-- Gift Card Order Action -->
             <div class="text-center pt-2">
                 <a id="gc-order-btn"
-                   href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20order%20a%20digital%20gift%20card." 
+                   href="#" 
                    target="_blank"
                    class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center">
                     Purchase This Gift Card / Comprar Tarjeta de Regalo
@@ -326,9 +317,8 @@
 
     </main>
 
-    <!-- Footer / Pie de página -->
+    <!-- Footer -->
     <footer class="w-full max-w-5xl mx-auto px-6 py-8 border-t border-spaPink/40 text-center space-y-4">
-        <!-- Socials in Footer -->
         <div class="flex justify-center items-center gap-4 text-spaDarkPink">
             <a href="https://www.instagram.com/spa.miabeauty/" target="_blank" class="hover:text-spaText transition duration-200">
                 <i class="fa-brands fa-instagram text-2xl"></i>
@@ -338,12 +328,10 @@
             </a>
         </div>
         
-        <!-- Address & Contact -->
         <p class="text-xs text-gray-500 font-semibold">
             1731 Crossroads Vista Dr, Raleigh, NC 27606 | Mobile: +1 (919) 455-1783
         </p>
 
-        <!-- Copyright -->
         <p class="text-[11px] text-gray-400">
             &copy; 2026 Mia Spa. All rights reserved / Todos los derechos reservados.
         </p>
@@ -351,34 +339,33 @@
 
     <!-- JavaScript For Interactivity -->
     <script>
-        // State variables for Date and Time Selection
         let selectedDate = null;
         let selectedTime = null;
+        const spaPhoneNumber = "19194551783"; // Nancy's US WhatsApp number
 
-        // Initialize Calendar
+        // Generate July 2026 Calendar
         function generateCalendar() {
             const calendarDaysContainer = document.getElementById('calendar-days');
             calendarDaysContainer.innerHTML = '';
 
-            // Generating Mock dates for July 2026
             const totalDays = 31;
             const startOffset = 2; // Wednesday (July 1, 2026) -> Mo=0, Tu=1, We=2
 
-            // Blank spaces for offset
+            // Offset spaces
             for (let i = 0; i < startOffset; i++) {
                 const blank = document.createElement('span');
                 calendarDaysContainer.appendChild(blank);
             }
 
-            // Real Days
+            // Generate active days
             for (let day = 1; day <= totalDays; day++) {
                 const dayBtn = document.createElement('button');
                 dayBtn.innerText = day;
                 dayBtn.className = "calendar-day-btn py-2 text-xs font-semibold rounded-lg text-spaText hover:bg-spaPink hover:text-spaDarkPink transition duration-150";
                 
-                // Exclude Sundays for spa relaxation slots
+                // Exclude Sundays
                 const dayOfWeek = (day + startOffset - 1) % 7; 
-                if (dayOfWeek === 6) { // Sunday
+                if (dayOfWeek === 6) { 
                     dayBtn.className += " opacity-30 cursor-not-allowed";
                     dayBtn.disabled = true;
                 } else {
@@ -389,14 +376,11 @@
         }
 
         function selectDate(day) {
-            // Remove active classes
             document.querySelectorAll('.calendar-day-btn').forEach(btn => {
                 btn.classList.remove('bg-spaDarkPink', 'text-white', 'hover:bg-spaDarkPink');
             });
 
-            // Find clicked day button and color it
             const buttons = document.querySelectorAll('.calendar-day-btn');
-            // Adding active styling to chosen button
             buttons.forEach(btn => {
                 if (parseInt(btn.innerText) === day && !btn.disabled) {
                     btn.classList.add('bg-spaDarkPink', 'text-white');
@@ -408,13 +392,11 @@
         }
 
         function selectTime(time) {
-            // Remove active styles from time slots
             document.querySelectorAll('.time-slot-btn').forEach(btn => {
                 btn.classList.remove('bg-spaDarkPink', 'text-white', 'border-spaDarkPink');
                 btn.classList.add('text-spaText');
             });
 
-            // Find the clicked slot and apply highlight
             event.target.classList.add('bg-spaDarkPink', 'text-white', 'border-spaDarkPink');
             event.target.classList.remove('text-spaText');
 
@@ -429,15 +411,15 @@
             if (selectedDate && selectedTime) {
                 summaryText.innerHTML = `✨ <strong>${selectedDate}</strong> at <strong>${selectedTime}</strong> <br> <span class="text-xs text-spaDarkPink">Perfect! Ready to book. / ¡Perfecto! Listo para reservar.</span>`;
                 
-                // Enable WhatsApp button
+                // Enable button
                 bookingBtn.classList.remove('opacity-60', 'cursor-not-allowed', 'pointer-events-none');
                 
-                // Set bilingue pre-filled message URL
+                // Set bilingue message
                 const encodedMsg = encodeURIComponent(
                     `Hi Nancy! I'd like to book a Signature Ritual session on ${selectedDate} at ${selectedTime}.\n\n` +
                     `¡Hola Nancy! Me gustaría reservar una sesión del Ritual Signature el día ${selectedDate} a las ${selectedTime}.`
                 );
-                bookingBtn.href = `https://wa.me/19194551783?text=${encodedMsg}`;
+                bookingBtn.href = `https://wa.me/${spaPhoneNumber}?text=${encodedMsg}`;
             } else if (selectedDate) {
                 summaryText.innerHTML = `📅 selected <strong>${selectedDate}</strong>. Now choose a time slot. / selecciona una hora.`;
             } else if (selectedTime) {
@@ -445,47 +427,35 @@
             }
         }
 
-        // Live Gift Card Preview Logic
+        // Live Custom Image Gift Card Preview Logic
         function updateGiftCard() {
             const toVal = document.getElementById('gc-to').value.trim() || 'Dear Friend';
             const fromVal = document.getElementById('gc-from').value.trim() || 'Aly';
             const msgVal = document.getElementById('gc-message').value.trim() || 'An unforgettable hour of tranquility, massage & hot volcanic stones designed especially for you.';
 
-            document.getElementById('preview-to').innerText = `To: ${toVal}`;
-            document.getElementById('preview-from').innerText = `From: ${fromVal}`;
+            document.getElementById('preview-to').innerText = toVal;
+            document.getElementById('preview-from').innerText = fromVal;
             document.getElementById('preview-msg').innerText = `"${msgVal}"`;
 
-            // Update WhatsApp Order Button link dynamically
+            // Update WhatsApp Order Button
             const encodedGCMsg = encodeURIComponent(
-                `Hi Nancy! I'd like to order a Personalized Digital Gift Card:\n\n` +
+                `Hi Nancy! I'd like to order a Personalized Digital Gift Card ($95 USD):\n\n` +
                 `• To / Para: ${toVal}\n` +
                 `• From / De: ${fromVal}\n` +
-                `• Message / Mensaje: "${msgVal}"\n` +
-                `• Value / Valor: $95 USD\n\n` +
-                `Please send me payment instructions to issue this digital voucher.`
+                `• Message / Mensaje: "${msgVal}"\n\n` +
+                `Please send me payment details to issue this voucher.`
             );
-            document.getElementById('gc-order-btn').href = `https://wa.me/19194551783?text=${encodedGCMsg}`;
+            document.getElementById('gc-order-btn').href = `https://wa.me/${spaPhoneNumber}?text=${encodedGCMsg}`;
         }
 
-        function changeCardDesign(style) {
-            const previewCard = document.getElementById('gift-card-preview');
-            const previewTag = document.getElementById('preview-tag');
-            
-            if (style === 'pink') {
-                previewCard.className = "w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FFF5F5] to-[#F9ECEE] border-2 border-spaDarkPink rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300";
-                previewTag.className = "text-[10px] text-spaDarkPink uppercase tracking-widest font-semibold mb-1";
-            } else if (style === 'gold') {
-                previewCard.className = "w-full max-w-[340px] aspect-[1.6/1] bg-gradient-to-br from-[#FAF5E6] to-[#FFFDF9] border-2 border-spaGold rounded-2xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden transition-all duration-300";
-                previewTag.className = "text-[10px] text-amber-600 uppercase tracking-widest font-semibold mb-1";
-            }
-        }
-
-        // Run functions on load
         window.onload = function() {
             generateCalendar();
-            updateGiftCard(); // Load initial gift card link
+            updateGiftCard(); 
         };
     </script>
-
 </body>
 </html>
+```
+eof
+
+---
