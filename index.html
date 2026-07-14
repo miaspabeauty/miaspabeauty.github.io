@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mia Spa - Experiencia de Bienestar</title>
-    <!-- Tailwind CSS para el diseño rápido y limpio -->
+    <title>Mia Spa - Wellness Experience / Experiencia de Bienestar</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,128 +23,157 @@
             }
         }
     </script>
-    <!-- Fuentes elegantes de Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             color: #4A3538;
         }
-        .font-serif {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
     </style>
 </head>
-<body class="bg-[#FAF6F6] min-h-screen flex flex-col justify-between">
+<body class="bg-white min-h-screen flex flex-col justify-between">
 
-    <!-- CABECERA / HEADER -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-spaPink">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-serif text-2xl tracking-widest text-spaText">
-                <span class="italic text-spaDarkPink">Mia</span> Spa
-            </span>
-            <span class="text-xs uppercase tracking-widest text-spaDarkPink font-semibold bg-spaPink px-3 py-1 rounded-full">
-                Medellín
-            </span>
+    <!-- Header / Cabecera -->
+    <header class="w-full max-w-4xl mx-auto px-6 py-5 flex justify-between items-center bg-white">
+        <div class="text-2xl md:text-3xl font-light tracking-wide">
+            <span class="font-serif italic text-spaDarkPink">Mia</span> Spa
+        </div>
+        <div class="bg-spaPink text-spaDarkPink text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
+            Raleigh, NC
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="max-w-md mx-auto px-6 py-8 flex-grow">
+    <!-- Main Content / Contenido Principal -->
+    <main class="w-full max-w-2xl mx-auto px-6 py-8 flex-grow">
         
-        <!-- BIENVENIDA -->
-        <div class="text-center mb-10">
-            <span class="text-xs uppercase tracking-widest text-spaDarkPink font-bold">Servicio Estrella</span>
-            <h1 class="font-serif text-4xl mt-2 mb-4 leading-tight">Nuestro Ritual Signature</h1>
-            <p class="text-sm text-gray-600 leading-relaxed">Una experiencia inmersiva diseñada para restaurar tu paz interior, liberar tensiones acumuladas y devolverle el equilibrio natural a tu cuerpo.</p>
+        <!-- Star Service Badge / Distintivo -->
+        <div class="text-center mb-4">
+            <span class="text-spaDarkPink text-xs font-semibold tracking-widest uppercase">
+                Signature Service • Servicio Estrella
+            </span>
         </div>
 
-        <!-- TARJETA DEL SERVICIO -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-spaPink/50 relative overflow-hidden mb-10">
-            <div class="absolute top-0 right-0 bg-spaPink text-spaDarkPink text-xs uppercase tracking-wider font-bold px-4 py-2 rounded-bl-2xl">
-                1 Hora Completa
+        <!-- Main Title / Título -->
+        <h1 class="text-3xl md:text-5xl text-center text-spaText font-serif mb-3 leading-tight">
+            Our Signature Ritual
+        </h1>
+        <h2 class="text-xl md:text-2xl text-center text-spaDarkPink font-serif italic mb-6">
+            Nuestro Ritual Signature
+        </h2>
+
+        <!-- Description / Descripción -->
+        <div class="text-center text-gray-600 space-y-3 max-w-lg mx-auto mb-10 text-sm md:text-base leading-relaxed">
+            <p>
+                An immersive experience designed to restore your inner peace, release accumulated tension, and bring natural balance back to your body.
+            </p>
+            <p class="italic text-spaDarkPink text-xs md:text-sm border-t border-spaPink pt-3">
+                Una experiencia inmersiva diseñada para restaurar tu paz interior, liberar tensiones acumuladas y devolverle el equilibrio natural a tu cuerpo.
+            </p>
+        </div>
+
+        <!-- Card / Tarjeta del Servicio -->
+        <div class="bg-spaPink/40 rounded-3xl p-6 md:p-8 border border-spaPink mb-8 shadow-sm">
+            
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h3 class="text-2xl text-spaText font-serif">Special Massage</h3>
+                    <h4 class="text-lg text-spaDarkPink font-serif italic">Masaje Especial Mia Spa</h4>
+                </div>
+                <div class="bg-white px-3 py-1.5 rounded-full border border-spaPink text-center">
+                    <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-spaDarkPink block">
+                        Duration / Duración
+                    </span>
+                    <span class="text-xs md:text-sm font-semibold text-spaText block">
+                        60 MIN
+                    </span>
+                </div>
             </div>
-            
-            <h2 class="font-serif text-2xl text-spaText mb-4 mt-2">Masaje Especial <span class="italic text-spaDarkPink">Mia Spa</span></h2>
-            
-            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-                Combina de manera perfecta cuatro técnicas ancestrales en una sola sesión de 60 minutos:
+
+            <!-- Intro / Introducción -->
+            <p class="text-gray-600 text-sm mb-6 pb-4 border-b border-spaPink/60">
+                Perfectly combines four ancestral techniques in a single session:
+                <span class="block italic text-spaDarkPink text-xs mt-1">
+                    Combina de manera perfecta cuatro técnicas ancestrales en una sola sesión:
+                </span>
             </p>
 
-            <!-- TÉCNICAS -->
-            <ul class="space-y-4 text-sm text-gray-700">
+            <!-- Techniques / Técnicas -->
+            <ul class="space-y-5 text-sm">
+                <!-- 1. Anti-stress -->
                 <li class="flex items-start">
-                    <span class="text-spaDarkPink mr-3 font-bold">✦</span>
+                    <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
-                        <strong class="text-spaText font-semibold">Masaje Anti-estresante:</strong> Alivia la tensión muscular acumulada en espalda y cuello, relajando profundamente el sistema nervioso.
+                        <strong class="text-spaText">Anti-Stress Massage:</strong> Relieves muscle tension in the back and neck, deeply relaxing the nervous system.
+                        <span class="block italic text-gray-500 text-xs mt-0.5">
+                            <strong>Masaje Anti-estresante:</strong> Alivia la tensión muscular acumulada en espalda y cuello, relajando profundamente el sistema nervioso.
+                        </span>
                     </div>
                 </li>
+
+                <!-- 2. Volcanic Stones -->
                 <li class="flex items-start">
-                    <span class="text-spaDarkPink mr-3 font-bold">✦</span>
+                    <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
-                        <strong class="text-spaText font-semibold">Piedras Volcánicas:</strong> El calor terapéutico de las piedras penetra en los tejidos, mejorando el flujo energético y relajando los músculos.
+                        <strong class="text-spaText">Volcanic Hot Stones:</strong> Therapeutic heat penetrates deeply, improving energy flow and soothing sore muscles.
+                        <span class="block italic text-gray-500 text-xs mt-0.5">
+                            <strong>Piedras Volcánicas:</strong> El calor terapéutico de las piedras penetra en los tejidos, mejorando el flujo energético y relajando los músculos.
+                        </span>
                     </div>
                 </li>
+
+                <!-- 3. Lavender Aromatherapy -->
                 <li class="flex items-start">
-                    <span class="text-spaDarkPink mr-3 font-bold">✦</span>
+                    <span class="text-spaDarkPink mr-3 mt-1 text-lg">✦</span>
                     <div>
-                        <strong class="text-spaText font-semibold">Aromaterapia de Lavanda:</strong> El uso de aceites esenciales puros induce un estado mental de paz y disminuye los niveles de ansiedad.
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-spaDarkPink mr-3 font-bold">✦</span>
-                    <div>
-                        <strong class="text-spaText font-semibold">Musicoterapia:</strong> Melodías suaves en frecuencias de sanación acompañan todo tu proceso para desconectarte del ruido exterior.
+                        <strong class="text-spaText">Lavender Aromatherapy:</strong> The use of pure organic essential oils induces absolute mental peace and gently reduces anxiety.
+                        <span class="block italic text-gray-500 text-xs mt-0.5">
+                            <strong>Aromaterapia de Lavanda:</strong> El uso de aceites esenciales puros induce un estado mental de paz y disminuye los niveles de ansiedad.
+                        </span>
                     </div>
                 </li>
             </ul>
 
-            <!-- PRECIO -->
-            <div class="mt-8 pt-6 border-t border-spaPink flex items-center justify-between">
-                <div>
-                    <span class="text-xs text-gray-400 uppercase tracking-widest">Valor de la experiencia</span>
-                    <p class="text-2xl font-serif text-spaText font-bold">$120.000 <span class="text-xs font-sans font-normal text-gray-500">COP</span></p>
+            <!-- Investment & Location / Inversión y Ubicación -->
+            <div class="mt-8 pt-6 border-t border-spaPink/60 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-center sm:text-left">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-spaDarkPink block">
+                        Price / Precio
+                    </span>
+                    <span class="text-3xl font-serif text-spaText">$95 <span class="text-sm font-sans font-semibold text-gray-500">USD</span></span>
                 </div>
-                <div class="bg-spaPink/50 text-spaDarkPink font-semibold text-xs rounded-lg px-3 py-1.5">
-                    Cupos Limitados
+                <div class="text-center sm:text-right bg-white/60 p-3 rounded-2xl border border-spaPink/40">
+                    <span class="text-[10px] font-semibold uppercase tracking-widest text-spaDarkPink block">
+                        Location / Ubicación
+                    </span>
+                    <p class="text-xs font-semibold text-spaText">1731 Crossroads Vista Dr</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">
+                        📍 Studio & Home Service / A Domicilio
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- BOTÓN DE ACCIÓN / AGENDAR -->
+        <!-- Booking Button / Botón de Reservas -->
         <div class="text-center">
-            <a href="https://wa.me/+1(919)455-1783?text=Hola%20Mia%20Spa,%20me%20gustaría%20agendar%20mi%20cita%20para%20el%20Ritual%20Signature." 
-               target="_blank" 
-               class="inline-block w-full bg-spaDarkPink hover:bg-spaDarkPink/90 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-spaDarkPink/20 transition duration-300 transform hover:-translate-y-0.5">
-                Reserva tu Espacio por WhatsApp
+            <a href="https://wa.me/19194551783?text=Hi%20Nancy!%20I'd%20like%20to%20book%20a%20Signature%20Ritual%20session.%20/%20¡Hola%20Nancy!%20Me%20gustaría%20reservar%20una%20sesión%20del%20Ritual%20Signature." 
+               target="_blank"
+               class="inline-block w-full sm:w-auto bg-spaDarkPink hover:bg-[#c9959c] text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-lg text-center">
+                Book Your Session / Reserva Tu Cita
             </a>
-            <p class="text-[11px] text-gray-400 mt-3">Atención personalizada • Previa cita programada</p>
+            <span class="block text-gray-400 text-[11px] mt-2 italic">
+                Direct booking via WhatsApp • Reserva directa por WhatsApp
+            </span>
         </div>
 
     </main>
 
-    <!-- PIE DE PÁGINA / REDES SOCIALES -->
-    <footer class="bg-white border-t border-spaPink py-8 mt-12">
-        <div class="max-w-md mx-auto px-6 text-center">
-            <p class="font-serif text-lg italic text-spaText mb-4">Conéctate con tu bienestar</p>
-            
-            <!-- ENLACES DE REDES -->
-            <div class="flex justify-center space-x-6 mb-6">
-                <!-- Ícono oficial de Instagram con degradado nativo -->
-                <a href="https://instagram.com/miaspabeauty" target="_blank" class="group flex flex-col items-center gap-1.5" aria-label="Síguenos en Instagram">
-                    <span class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-0.5 transition-transform duration-300 group-hover:scale-110 shadow-sm">
-                        <span class="flex h-full w-full items-center justify-center rounded-[10px] bg-white">
-                            <svg class="h-6 w-6 text-spaText transition-colors duration-300 group-hover:text-spaDarkPink" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                            </svg>
-                        </span>
-                    </span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-400 group-hover:text-spaDarkPink transition-colors">@miaspabeauty</span>
-                </a>
-            </div>
-
-            <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 Mia Spa Elegance. Todos los derechos reservados.</p>
-        </div>
+    <!-- Footer / Pie de página -->
+    <footer class="w-full max-w-4xl mx-auto px-6 py-6 border-t border-spaPink/40 text-center text-xs text-gray-400">
+        <p>&copy; 2026 Mia Spa. All rights reserved / Todos los derechos reservados.</p>
     </footer>
 
 </body>
